@@ -1,0 +1,59 @@
+// ============================================
+// ASSIGNMENT 5: THE SCRIPT
+// Positive/Negative Analyzer
+// ============================================
+
+import java.util.Scanner; // TODO 1
+
+public class PositiveNegativeAverage {
+    public static void main(String[] args) {
+
+        // STEP 2: Create Scanner object
+        Scanner input = new Scanner(System.in); // TODO 2
+
+        // STEP 3: Declare counters and accumulator
+        int positiveCount = 0; // TODO 3
+        int negativeCount = 0; // TODO 4
+        int total = 0;         // TODO 5
+
+        // STEP 4: Priming read
+        System.out.print("Enter an integer (0 to quit): "); // TODO 6
+        int num = input.nextInt();                          // TODO 7
+
+        // STEP 5: Loop
+        while (num != 0) { // TODO 8
+
+            // STEP 6: Check positive/negative
+            if (num > 0) {          // TODO 9
+                positiveCount++;
+            } else if (num < 0) {   // TODO 10
+                negativeCount++;
+            }
+
+            // STEP 7: Add to total
+            total += num; // TODO 11
+
+            // STEP 8: Read next number
+            System.out.print("Enter an integer (0 to quit): "); // TODO 12
+            num = input.nextInt();                              // TODO 13
+        }
+
+        // STEP 9: Total count
+        int count = positiveCount + negativeCount; // TODO 14
+
+        // STEP 10: Output results
+        if (count == 0) { // TODO 15
+            System.out.println("No numbers were entered.");
+        } else {
+            System.out.println("Positive numbers: " + positiveCount); // TODO 16
+            System.out.println("Negative numbers: " + negativeCount);
+            System.out.println("Total: " + total);
+
+            double average = (double) total / count; // TODO 17
+            System.out.println("Average: " + average); // TODO 18
+        }
+
+        // STEP 11: Close Scanner
+        input.close(); // TODO 19
+    }
+}
