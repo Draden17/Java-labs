@@ -1,1 +1,43 @@
+// ============================================
+// ASSIGNMENT 2: THE SCRIPT
+// Gratuity Calculator
+// COP2250 Java Programming
+// Kevin Pyatt, Ph.D. | Pyatt Labs
+// ============================================
 
+// ACT 1: Import Scanner
+import java.util.Scanner;
+
+public class GratuityCalculator {
+    public static void main(String[] args) {
+        
+        // ACT 2: Create Scanner object
+        Scanner input = new Scanner(System.in);
+        
+        // ACT 3: Get user input
+        // Prompt for subtotal
+        System.out.print("Enter the subtotal: ");
+        double subtotal = input.nextDouble();
+        
+        // Prompt for gratuity rate
+        System.out.print("Enter the gratuity rate (e.g., 15 for 15%): ");
+        double gratuityRate = input.nextDouble();
+        
+        // ACT 4: Calculate
+        // Calculate gratuity
+        double gratuity = subtotal * (gratuityRate / 100);
+        
+        // Calculate total
+        double total = subtotal + gratuity;
+        
+        // ACT 5: Display results
+        // Display gratuity
+        System.out.printf("Gratuity: $%.2f%n", gratuity);
+        
+        // Display total
+        System.out.printf("Total: $%.2f%n", total);
+        
+        // CURTAIN CALL: Clean up
+        input.close();
+    }
+}
