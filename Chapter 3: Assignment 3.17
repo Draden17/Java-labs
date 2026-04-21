@@ -1,0 +1,74 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class RockPaperScissors {
+    public static void main(String[] args) {
+        
+        // ============================================
+        // ACT 1: SET THE STAGE
+        // ============================================
+        
+        // TODO 1
+        String[] choices = {"Scissor", "Rock", "Paper"};
+        
+        // TODO 2
+        Scanner input = new Scanner(System.in);
+        
+        // TODO 3
+        Random rand = new Random();
+        
+        
+        // ============================================
+        // ACT 2: GENERATE COMPUTER'S CHOICE
+        // ============================================
+        
+        // TODO 4
+        int computer = rand.nextInt(3);
+        
+        
+        // ============================================
+        // ACT 3: GET USER'S CHOICE
+        // ============================================
+        
+        // TODO 5
+        System.out.print("scissor (0), rock (1), paper (2): ");
+        
+        // TODO 6
+        int user = input.nextInt();
+        
+        
+        // ============================================
+        // ACT 4: DISPLAY CHOICES
+        // ============================================
+        
+        // TODO 7
+        System.out.print("The computer is " + choices[computer] + ". ");
+        
+        // TODO 8
+        System.out.print("You are " + choices[user] + ". ");
+        
+        
+        // ============================================
+        // ACT 5: DETERMINE THE WINNER
+        // ============================================
+        
+        // TODO 9
+        if (user == computer) {
+            System.out.println("It is a draw!");
+        }
+        
+        // TODO 10
+        else if ((user == 0 && computer == 2) ||
+                 (user == 1 && computer == 0) ||
+                 (user == 2 && computer == 1)) {
+            System.out.println("You won!");
+        }
+        
+        // TODO 11
+        else {
+            System.out.println("Computer wins!");
+        }
+        
+        input.close();
+    }
+}
