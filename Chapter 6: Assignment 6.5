@@ -1,41 +1,62 @@
-// STEP 1: Import Scanner
+/**
+ * SortThreeNumbers.java
+ * COP2250 - Assignment 6 (Exercise 6.5)
+ *
+ * Name: Your Name
+ * Date: Today's Date
+ * Description: This program reads three numbers from the user,
+ * sorts them in increasing order, and displays them.
+ */
+
 import java.util.Scanner;
 
 public class SortThreeNumbers {
 
-    // STEP 2: Define the displaySortedNumbers method
-    public static void displaySortedNumbers(
-        double num1, double num2, double num3) {
+    // STEP 1: Method signature
+    public static void displaySortedNumbers(double num1, double num2, double num3) {
 
-        // Find smallest
-        double min = Math.min(num1, Math.min(num2, num3));
+        // STEP 2: Sort the three numbers
+        double temp;
 
-        // Find largest
-        double max = Math.max(num1, Math.max(num2, num3));
+        if (num1 > num2) {
+            temp = num1;
+            num1 = num2;
+            num2 = temp;
+        }
 
-        // Find middle
-        double middle = (num1 + num2 + num3) - min - max;
+        if (num1 > num3) {
+            temp = num1;
+            num1 = num3;
+            num3 = temp;
+        }
 
-        // Print in order
-        System.out.println("Sorted numbers: " + min + " " + middle + " " + max);
+        if (num2 > num3) {
+            temp = num2;
+            num2 = num3;
+            num3 = temp;
+        }
+
+        // STEP 3: Display the sorted numbers
+        System.out.println(num1 + " " + num2 + " " + num3);
     }
 
-    // STEP 3: Write the main method
     public static void main(String[] args) {
 
-        // STEP 4: Create Scanner
+        // STEP 6: Create a Scanner
         Scanner input = new Scanner(System.in);
 
-        // STEP 5: Get user input
+        // STEP 7: Prompt the user
         System.out.print("Enter three numbers: ");
+
+        // STEP 8: Read three numbers
         double num1 = input.nextDouble();
         double num2 = input.nextDouble();
         double num3 = input.nextDouble();
 
-        // STEP 6: Call the method
+        // STEP 9: Call method
         displaySortedNumbers(num1, num2, num3);
 
-        // STEP 7: Close Scanner
+        // STEP 10: Close Scanner
         input.close();
     }
 }
