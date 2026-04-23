@@ -1,0 +1,41 @@
+// STEP 1: Import Scanner
+import java.util.Scanner;
+
+public class SortThreeNumbers {
+
+    // STEP 2: Define the displaySortedNumbers method
+    public static void displaySortedNumbers(
+        double num1, double num2, double num3) {
+
+        // Find smallest
+        double min = Math.min(num1, Math.min(num2, num3));
+
+        // Find largest
+        double max = Math.max(num1, Math.max(num2, num3));
+
+        // Find middle
+        double middle = (num1 + num2 + num3) - min - max;
+
+        // Print in order
+        System.out.println("Sorted numbers: " + min + " " + middle + " " + max);
+    }
+
+    // STEP 3: Write the main method
+    public static void main(String[] args) {
+
+        // STEP 4: Create Scanner
+        Scanner input = new Scanner(System.in);
+
+        // STEP 5: Get user input
+        System.out.print("Enter three numbers: ");
+        double num1 = input.nextDouble();
+        double num2 = input.nextDouble();
+        double num3 = input.nextDouble();
+
+        // STEP 6: Call the method
+        displaySortedNumbers(num1, num2, num3);
+
+        // STEP 7: Close Scanner
+        input.close();
+    }
+}
